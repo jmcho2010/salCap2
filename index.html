@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월급 계산기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], input[type="text"], input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+                font-size: 14px;
+            }
+            
+            button {
+                padding: 12px;
+                font-size: 14px;
+            }
+            
+            input[type="number"], input[type="text"], input[type="date"], input[type="time"] {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+                font-size: 12px;
+            }
+            
+            button {
+                padding: 10px;
+                font-size: 12px;
+            }
+            
+            input[type="number"], input[type="text"], input[type="date"], input[type="time"] {
+                padding: 6px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>월급 계산기</h2>
+
+    <!-- 근무 기록 추가 버튼 -->
+    <div class="input-group">
+        <button id="addWorkRecordButton">근무 기록 추가</button>
+    </div>
+
+    <!-- 근무 기록 영역 -->
+    <div id="workRecordsContainer"></div>
+
+    <!-- 분당 급여 입력 -->
+    <div class="input-group">
+        <label for="wagePerMinute">분당 급여 (원)</label>
+        <input type="number" id="wagePerMinute" placeholder="분당 급여를 입력하세요 (예시: 217)" min="1">
+    </div>
+
+    <!-- 원천징수 체크박스 -->
+    <div class="input-group">
+        <label for="withholdingTax">3.3% 원천징수</label>
+        <input type="checkbox" id="withholdingTax">
+    </div>
+
+    <!-- 결과 버튼 -->
+    <button id="calculateButton">계산하기</button>
+
+    <!-- 결과 출력 -->
+    <h3>결과</h3>
+    <p id="result"></p>
+</div>
+
+<script src="salaryCalculator.js"></script>
+
+</body>
+</html>
